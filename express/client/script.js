@@ -4,7 +4,7 @@ async function getuserData() {
    
 
 
-    let userData = await fetch('http://localhost:3000/getData');
+    let userData = await fetch('/getData');
     console.log("userData :",userData);
     let parsedUserData = await userData.json();
     console.log("parsedUserData :",parsedUserData);
@@ -14,9 +14,9 @@ async function getuserData() {
         content=content +`
             <tr>
             <td>${parsedUserData[i]._id}</td>
-            <td><input type="name" name="name" id="name-${parsedUserData[i]._id}" value=${parsedUserData[i].name} disabled="true"></td> 
-            <td><input type="email" name="email" id="email-${parsedUserData[i]._id}" value=${parsedUserData[i].email} disabled="true"></td>
-            <td><input type="password" name="password" id="password-${parsedUserData[i]._id}" value=${parsedUserData[i].password} disabled="true"></td>
+            <td><input type="name" name="name" id="name-${parsedUserData[i]._id}" value="${parsedUserData[i].name}" disabled="true"></td> 
+            <td><input type="email" name="email" id="email-${parsedUserData[i]._id}" value="${parsedUserData[i].email}" disabled="true"></td>
+            <td><input type="password" name="password" id="password-${parsedUserData[i]._id}" value="${parsedUserData[i].password}" disabled="true"></td>
             <td><button onclick="handleEdit('${parsedUserData[i]._id}')">Edit</button></td>
             <td><button onclick="handleSave('${parsedUserData[i]._id}')">Save</button></td>
             <td><button onclick="handleDelete('${parsedUserData[i]._id}')">Delete</button></td>
@@ -62,21 +62,21 @@ async function handleSave(id){
     }
     let json_data = JSON.stringify(data);
 
-    await fetch('http://localhost:3000/editData',{
+    await fetch('/editData',{
         "method" : "PUT",
         "headers" : {
-            "Content-Type" : "text/json"
+            "Content-Type" : "application/json"
         },
         "body":json_data,
     });
-
+    getuserData();
 }
 async function handleDelete(id){
     console.log("id :",id);
-    let response = await fetch("http://localhost:3000/deleteData",{
+    let response = await fetch("/deleteData",{
         "method" : "DELETE",
         "headers":{
-            "Content-Type" : "text/plain",
+            "Content-Type" : "application/plain",
         },
         "body":id,
     });
@@ -85,8 +85,8 @@ async function handleDelete(id){
     console.log("parsed_response :",parsed_response);
 
     if(parsed_response === "success"){
-        alert("Deletion successful");
+        alert("success");
     }else{
-         alert("deletion failed");
+         alert("failed");
     }
 }

@@ -1,12 +1,12 @@
-const express = reqiure('express');
-const app = express()
+const express = require('express');
+const app = express();
 let { MongoClient,ObjectId } = require('mongodb');
-let dotenv = require('dotenv');
+const dotenv = require('dotenv');
 dotenv.config();
 let port = process.env.PORT;
 
 const client = new MongoClient('mongodb://localhost:27017');
-const db = client.db('ums');
+const db = client.db('umsq');
 const collection = db.collection('users');
 
 //test route
@@ -29,6 +29,7 @@ console.log("__dirname:",__dirname);
 app.use('/',express.static(__dirname + "/../client"));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
+app.use(express.text());
 
 app.post('/submit',async (req, res)=>{
     let data = req.body;
@@ -82,6 +83,29 @@ app.put('/editData',async (req , res)=>{
     })
 })
 
+app.delete('/deleteData',async (req , res)=>{
+    let data = req.body;
+    console.log("data :",data);
+
+    let id = data;
+    console.log("id :",id);
+
+    let _id =new ObjectId(id);
+    console.log("_id :",_id);
+
+    await collection.deleteOne({_id})
+    .then((message)=>{
+        console.log("Deletion successfull");
+        res.status(200).send("success");
+
+    })
+    .catch((error)=>{
+        console.log("Deletion failed");
+        res.status(400).send("failed");
+    })
+
+})
+
 async function connect (){
     await client .connect()
     .then((message)=>{
@@ -96,3 +120,4 @@ async function connect (){
         });
     })
 }
+connect()
