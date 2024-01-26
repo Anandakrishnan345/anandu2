@@ -38,6 +38,26 @@ app.get('/test',(req , res)=>{
 app.post('/submit',async (req , res)=>{
     let datas = req.body;
     console.log("datas :", datas);
+
+    //save to database
+    await model.create(data)
+    .then((message)=>{
+        console.log("document inserted successfully");
+        res.status(201).send("success")
+    })
 })
 
+
+async function connect() {
+    try {
+        await mongoose.connect('mongodb://127.0.0.1:27017/umse');
+        console.log("database connection established");
+    }catch (error) {
+        console.log("database not connected :",error);
+    }finally {
+        app.listen(port, ()=>{
+            console.log(`server runnning at http://localhost:${port}`);
+        });
+    }
+}
 
