@@ -90,3 +90,16 @@ async function handleDelete(id){
          alert("failed");
     }
 }
+async function testApi(){
+    let response = await fetch('http://192.168.150.134:3001/test');
+
+    let parsed_response = await response.json();
+    console.log("parsed response :",parsed_response);
+
+    if(parsed_response){
+        alert(parsed_response.message);
+        return;
+    }else{
+        alert('failed')
+    }
+}

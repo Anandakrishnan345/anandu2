@@ -11,7 +11,7 @@ const collection = db.collection('users');
 
 //test route
 app.get('/test',(req , res, next)=>{
-    // res.status(200).send("success");
+    res.status(200).send("success");
     next();
 
 },(req, res, next) => {
@@ -116,7 +116,7 @@ async function connect (){
     })
     .finally(()=>{
         app.listen(port, () => {
-            console.log(`server running at http://127.0.0.1:${port}`)
+            console.log(`server running at http://192.168.150.88:${port}`)
         });
     })
 }
