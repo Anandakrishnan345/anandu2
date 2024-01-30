@@ -107,3 +107,6 @@ input[type=submit]{
     margin: auto;
  background-color: aqua;
 }
+#name-error,#email-error,#password-error{
+    color:red;
+}

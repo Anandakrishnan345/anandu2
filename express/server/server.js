@@ -1,13 +1,13 @@
 const express = require('express');
 const app = express();
-let { MongoClient,ObjectId } = require('mongodb');
+let { MongoClient, ObjectId} = require('mongodb');
 const dotenv = require('dotenv');
 dotenv.config();
 let port = process.env.PORT;
 
 const client = new MongoClient('mongodb://localhost:27017');
-const db = client.db('umsq');
-const collection = db.collection('users');
+const db = client.db("udm");
+const collection = db.collection("users");
 
 //test route
 app.get('/test',(req , res, next)=>{
