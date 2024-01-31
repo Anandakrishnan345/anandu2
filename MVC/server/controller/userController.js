@@ -49,9 +49,25 @@ exports.createUser= async function(req, res) {
 
 }
 
-async function getUserData() {
 
+exports.getUserData=async function (req,res){
+    
+    
+    try {
+        
+        const usersList = await users.find();
+
+        if (usersList.length > 0) {
+            res.status(200).send(usersList);
+        } else {
+            res.status(404).send("No users found");
+        }
+    } catch (error) {
+        console.error("Error fetching users:", error);
+        res.status(500).send("Data not Found");
+    }
 }
+
 
 async function updateUser() {
 
