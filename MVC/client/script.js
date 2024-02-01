@@ -15,7 +15,7 @@ async function submitform(){
         password,
     }
     let json_data = JSON.stringify(data);
-    let response = await fetch('/submit',{
+    let response = await fetch('/users',{
         "method":"POST",
         "headers":{
             "Content-Type" :"application/json",
@@ -171,6 +171,48 @@ function validateemail(){
        password_error.innerHTML="invalid password";
     }else{
        password_error.innerHTML=""
+    }
+ }
+
+ async function login(){
+    let email = document.getElementById('login_email').value;
+    console.log("email : ",email);
+ 
+    let password = document.getElementById('login_password').value;
+    console.log("password : ", password);
+ 
+ 
+    let datas={
+       email,
+       password,
+    }
+ 
+    let json_data=JSON.stringify(datas);
+    console.log("json_data",json_data);
+ 
+    let response=await fetch('http://localhost:3001/login',{
+       method: "POST",
+       headers: {
+          "Content-Type": "application/json",
+       },
+       body:json_data,
+    });
+  
+    let parsed_response=await response.json();
+    console.log("parsed_response : ",parsed_response);
+ 
+ 
+    if(parsed_response.success){
+       let token=parsed_response.data;
+       console.log("token : ",token);
+ 
+       localStorage.setItem('token',token);
+       window.location.href="getuser.html";
+       alert(parsed_response.message);
+       return;
+    }else{
+       alert(parsed_response.message);
+       return;
     }
  }
 // async function testApi(){
