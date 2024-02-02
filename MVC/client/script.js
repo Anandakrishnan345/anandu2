@@ -207,7 +207,7 @@ function validateemail(){
        console.log("token : ",token);
  
        localStorage.setItem('token',token);
-       window.location.href="getuser.html";
+       window.location.href="get_user.html";
        alert(parsed_response.message);
        return;
     }else{

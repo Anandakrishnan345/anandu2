@@ -2,6 +2,7 @@ let success_function = require ('../utils/response-handlers').success_function;
 let error_function = require('../utils/response-handlers').error_function;
 let users = require('../db/models/users');
 let jwt = require('jsonwebtoken');
+let bcrypt = require('bcryptjs')
 let dotenv = require('dotenv');
 dotenv.config();
 
@@ -21,6 +22,10 @@ exports.login=async function(req,res){
         if(user){
             let db_password=user.password;
             console.log("db_password : ",db_password);
+
+            // complete
+
+            // bcrypt.compare(password,db_password,(err,auth))
 
             if(password===db_password){
                 let access_token=jwt.sign({user_id:user.user_id},process.env.PRIVATE_KEY,{expiresIn :"1d"});
