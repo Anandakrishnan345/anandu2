@@ -23,34 +23,37 @@ exports.login=async function(req,res){
             let db_password=user.password;
             console.log("db_password : ",db_password);
 
-            // complete
+            
 
-            // bcrypt.compare(password,db_password,(err,auth))
+            bcrypt.compare(password,db_password,(err,auth)=>{
+                if(auth === true){
+                    let access_token=jwt.sign({user_id:user.user_id},process.env.PRIVATE_KEY,{expiresIn :"1d"});
+                    console.log("access_token : ",access_token);
+    
+                    let response=success_function({
+                        statusCode:200,
+                        data:access_token,
+                        message:"Login Successfull",
+                    });
+                    res.status(response.statusCode).send(response);
+                    return;
+                }else{
+                    let response=error_function({
+                        statusCode:400,
+                        message:"wrong password",
+                    });
+                    res.status(response.statusCode).send(response);
+                    return;
+                }
+                
+            });
 
-            if(password===db_password){
-                let access_token=jwt.sign({user_id:user.user_id},process.env.PRIVATE_KEY,{expiresIn :"1d"});
-                console.log("access_token : ",access_token);
-
-                let response=success_function({
-                    statusCode:200,
-                    data:access_token,
-                    message:"Login Successfull",
-                });
-                res.status(response.statusCode).send(response);
-                return;
-            }else{
-                let response=error_function({
-                    statusCode:400,
-                    message:error.message?error.message:error
-                });
-                res.status(response.statusCode).send(response);
-                return;
-            }
+         
 
         }else{
             let response=error_function({
                 statusCode:404,
-                message:error.message?error.message:error
+                message:error.message?error.message:error,
             });
             res.status(response.statusCode).send(response);
             return;
@@ -60,7 +63,7 @@ exports.login=async function(req,res){
         console.log("error :",error);
         let response=error_function({
             statusCode:400,
-            message:error.message?error.message:error
+            message:error.message?error.message:error,
         });
         res.status(response.statusCode).send(response);
         return;
