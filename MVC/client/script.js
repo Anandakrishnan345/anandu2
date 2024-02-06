@@ -74,34 +74,64 @@ function handleEdit(id){
     password.disabled=false;
 }
 
-async function handleSave(id){
-    console.log("id :",id);
+// async function handleSave(id){
+//     console.log("id :",id);
+//     let name = document.getElementById(`name-${id}`).value;
+//     console.log("name :",name);
+
+//     let email = document.getElementById(`email-${id}`).value;
+//     console.log("email :",email);
+
+//     let password = document.getElementById(`password-${id}`).value;
+//     console.log("password :",password);
+
+//     let data = {
+//         id,
+//         name,
+//         email,
+//         password,
+//     }
+//     let json_data = JSON.stringify(data);
+
+//     await fetch('/editData',{
+//         "method" : "PUT",
+//         "headers" : {
+//             "Content-Type" : "application/json"
+//         },
+//         "body":json_data,
+//     });
+//     getuserData();
+// }
+async function handleSave(id) {
+
+
     let name = document.getElementById(`name-${id}`).value;
-    console.log("name :",name);
-
+    console.log("edit : ", name);
+ 
     let email = document.getElementById(`email-${id}`).value;
-    console.log("email :",email);
-
+    console.log("email : ", email);
+ 
     let password = document.getElementById(`password-${id}`).value;
-    console.log("password :",password);
-
+    console.log("password : ", password);
+ 
     let data = {
-        id,
-        name,
-        email,
-        password,
+       id,
+       name,
+       email,
+       password,
     }
+ 
     let json_data = JSON.stringify(data);
-
-    await fetch('/editData',{
-        "method" : "PUT",
-        "headers" : {
-            "Content-Type" : "application/json"
-        },
-        "body":json_data,
+ 
+    await fetch('/editData', {
+       "method": "PUT",
+       "headers": {
+          "content-Type": "application/json"
+       },
+       "body": json_data
     });
-    getuserData();
-}
+ getuserData()
+ }
 async function handleDelete(id){
     console.log("id :",id);
     let response = await fetch("/deleteData",{
