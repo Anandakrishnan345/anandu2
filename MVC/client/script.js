@@ -33,7 +33,14 @@ async function submitform(){
 
 async function getuserData() {
    
-    let userData = await fetch('/getData');
+    // let userData = await fetch('/getData');
+    let userData = await fetch('http://localhost:3001/users', {
+        method: "GET",
+        headers: {
+           'authorization': `Bearer ${token}`,
+        },
+     });
+
     console.log("userData :",userData);
     
     let parsedUserData = await userData.json();
