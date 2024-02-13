@@ -3,7 +3,8 @@ function Display ({data}){
     console.log("display content rendering")
     return(
         <>
-        <p>data : {data}</p>
+        <p>name : {data.name}</p>
+        <p>email : {data.email}</p>
         </>
     )
 }
