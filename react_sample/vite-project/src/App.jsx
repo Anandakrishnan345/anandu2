@@ -1,7 +1,12 @@
 // import Greeting from "./component/Greeting";
 // import Greeting1 from "./component/Greeting1";
 // import Counter from "./component/counter";
-import Parent from "./component/forms/Parent"
+// import Parent from "./component/forms/Parent"
+// import MyComponentWithUpperCase from "./component/higherordercomponents/MyComponentWithUpperCase"
+
+import BasicRouting from "./component/router/BasicRouting"
+
+// import MyPureComponent1 from "./component/PureComponents/MyPureComponent1"
 
 function App() {
   return (
@@ -9,7 +14,10 @@ function App() {
    {/* <Greeting/>
    <Greeting1 name = {"bunny"}/>
   <Counter initialValue = {0}/> */}
-  <Parent/>
+  {/* <Parent/> */}
+  {/* <MyComponentWithUpperCase text={"hello world"}/> */}
+  {/* <MyPureComponent1 /> */}
+  <BasicRouting />
   </>
   )
   
