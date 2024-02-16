@@ -4,7 +4,11 @@
 // import Parent from "./component/forms/Parent"
 // import MyComponentWithUpperCase from "./component/higherordercomponents/MyComponentWithUpperCase"
 
-import BasicRouting from "./component/router/BasicRouting"
+import NestedRouting from "./component/nestedrouting/NestedRouting"
+
+// import BasicRouting1 from "./component/router/BasicRouting1"
+
+// import BasicRouting from "./component/router/BasicRouting"
 
 // import MyPureComponent1 from "./component/PureComponents/MyPureComponent1"
 
@@ -17,7 +21,9 @@ function App() {
   {/* <Parent/> */}
   {/* <MyComponentWithUpperCase text={"hello world"}/> */}
   {/* <MyPureComponent1 /> */}
-  <BasicRouting />
+  {/* <BasicRouting /> */}
+  {/* <BasicRouting1 /> */}
+  <NestedRouting />
   </>
   )
   
