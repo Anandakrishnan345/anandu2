@@ -4,7 +4,9 @@
 // import Parent from "./component/forms/Parent"
 // import MyComponentWithUpperCase from "./component/higherordercomponents/MyComponentWithUpperCase"
 
-import NestedRouting from "./component/nestedrouting/NestedRouting"
+import Parent from "./component/Hooks/useCallback/Parent"
+
+// import NestedRouting from "./component/nestedrouting/NestedRouting"
 
 // import BasicRouting1 from "./component/router/BasicRouting1"
 
@@ -23,7 +25,8 @@ function App() {
   {/* <MyPureComponent1 /> */}
   {/* <BasicRouting /> */}
   {/* <BasicRouting1 /> */}
-  <NestedRouting />
+  {/* <NestedRouting /> */}
+  <Parent />
   </>
   )
   

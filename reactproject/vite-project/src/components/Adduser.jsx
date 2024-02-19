@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import './Login.css'
 import { BrowserRouter as Link,Route,Router } from 'react-router-dom';
 
-const Login = () => {
-    const [username, setEmail] = useState('');
+const Adduser = () => {
+    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
+
     const [password, setPassword] = useState('');
 
    
@@ -13,13 +15,15 @@ const Login = () => {
           
             <h2>Login</h2>
             <form className='wrap-item'>
+                <label htmlFor="name">Enter your Name</label>
+                <input type="text" placeholder="Enter your name" name='name' value={username} onChange={(e) => setUsername(e.target.value)} />
                 <label htmlFor="name">Enter your email</label>
-                <input type="text" placeholder="email" name='name' value={username} onChange={(e) => setEmail(e.target.value)} />
+                <input type="text" placeholder="email" name='email' value={email} onChange={(e) => setEmail(e.target.value)} />
                 <label htmlFor="password">Enter Your Password</label>
                 <input type="password" placeholder="Password" name='password' value={password} onChange={(e) => setPassword(e.target.value)} />
 
                 <div className='centre'>
-                <button type="submit"><Link to='/Adduser'>Adduser</Link></button>
+                <button type="submit">Adduser</button>
                 
                 </div>
                 
@@ -28,4 +32,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Adduser;

@@ -1,5 +1,6 @@
 import React from "react";
 import './Land_nav.css'
+
 function Land_nav(){
     return(
         <>
@@ -10,7 +11,7 @@ function Land_nav(){
                         <li>Home</li>
                         <li>About Us</li>
                         <li>Contact</li>
-                        <li>Services</li>
+                        <li> Services</li>
                     </ul>
 
                    
