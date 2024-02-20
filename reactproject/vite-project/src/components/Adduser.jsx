@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import './Login.css'
+import './Adduser.css'
 
 
-const Adduser = () => {
+function Adduser  () {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
 
@@ -11,9 +11,9 @@ const Adduser = () => {
    
 
     return (
-        <div className='wrapper' >
+        <div className='wrapper_add' >
           
-            <h2>Login</h2>
+            <h2>Adduser</h2>
             <form className='wrap-item'>
                 <label htmlFor="name">Enter your Name</label>
                 <input type="text" placeholder="Enter your name" name='name' value={username} onChange={(e) => setUsername(e.target.value)} />

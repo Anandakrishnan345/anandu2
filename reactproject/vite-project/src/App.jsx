@@ -17,9 +17,9 @@ function App() {
     <Router>
       <div>   
         <Routes>
-          <Route path="/" element={<Final />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/adduser" element={<Adduser />} />
+          <Route path="/" exact element={<Final />} />
+          <Route path="/login" exact element={<Login />} />
+          <Route path="/adduser" exact element={<Adduser />} />
         </Routes>
       </div>
     </Router>

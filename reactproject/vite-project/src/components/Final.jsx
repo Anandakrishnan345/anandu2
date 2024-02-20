@@ -6,7 +6,7 @@ function Final(){
     return(
         <>
             <Land_nav/>
-            <div><Link to={"/login"}>Login</Link></div>
+            <div><button><Link to={"/login"}>Login</Link></button></div>
             <Land_footer/>
         </>
     )

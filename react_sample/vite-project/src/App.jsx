@@ -4,7 +4,11 @@
 // import Parent from "./component/forms/Parent"
 // import MyComponentWithUpperCase from "./component/higherordercomponents/MyComponentWithUpperCase"
 
-import Parent from "./component/Hooks/useCallback/Parent"
+import UseContextApp1 from "./component/Hooks/useContext/UseContextApp1"
+
+// import UseContextApp from "./component/Hooks/useContext/UseContextApp"
+
+// import Parent from "./component/Hooks/useCallback/Parent"
 
 // import NestedRouting from "./component/nestedrouting/NestedRouting"
 
@@ -26,7 +30,9 @@ function App() {
   {/* <BasicRouting /> */}
   {/* <BasicRouting1 /> */}
   {/* <NestedRouting /> */}
-  <Parent />
+  {/* <Parent /> */}
+  {/* <UseContextApp /> */}
+  <UseContextApp1/>
   </>
   )
   

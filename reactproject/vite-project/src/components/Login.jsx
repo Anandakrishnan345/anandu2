@@ -18,8 +18,9 @@ const Login = () => {
                 <label htmlFor="password">Enter Your Password</label>
                 <input type="password" placeholder="Password" name='password' value={password} onChange={(e) => setPassword(e.target.value)} />
 
-                <div className='centre'>
-                 <Link to ={'/adduser'}>Login</Link> 
+                <div className='adduser'>
+                 
+                 <button><Link to ={'/adduser'}>Login</Link> </button>
                 
                 </div>
                 
