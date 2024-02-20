@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Login.css'
-import { BrowserRouter as Link,Route,Router } from 'react-router-dom';
+
 
 const Adduser = () => {
     const [username, setUsername] = useState('');
@@ -22,7 +22,7 @@ const Adduser = () => {
                 <label htmlFor="password">Enter Your Password</label>
                 <input type="password" placeholder="Password" name='password' value={password} onChange={(e) => setPassword(e.target.value)} />
 
-                <div className='centre'>
+                <div className='adduser'>
                 <button type="submit">Adduser</button>
                 
                 </div>

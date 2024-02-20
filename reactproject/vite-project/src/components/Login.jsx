@@ -19,7 +19,7 @@ const Login = () => {
                 <input type="password" placeholder="Password" name='password' value={password} onChange={(e) => setPassword(e.target.value)} />
 
                 <div className='centre'>
-                <button type="submit"><Link to='/Adduser'>Adduser</Link></button>
+                 <Link to ={'/adduser'}>Login</Link> 
                 
                 </div>
                 
