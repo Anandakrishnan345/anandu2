@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import './Adduser.css'
+import './Adduser.css';
+
 
 
 function Adduser  () {
