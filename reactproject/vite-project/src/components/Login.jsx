@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './Login.css'
-import { BrowserRouter as Link,Route,Router } from 'react-router-dom';
+// import { BrowserRouter as Link,Route,Router } from 'react-router-dom';
+import { Link, Route, BrowserRouter as Router } from 'react-router-dom';
+
 
 const Login = () => {
     const [username, setEmail] = useState('');
@@ -11,8 +13,9 @@ const Login = () => {
     return (
         <div className='wrapper' >
           
-            <h2>Login</h2>
+            
             <form className='wrap-item'>
+            <h2 className='title'>Login</h2>
                 <label htmlFor="name">Enter your email</label>
                 <input type="text" placeholder="email" name='name' value={username} onChange={(e) => setEmail(e.target.value)} />
                 <label htmlFor="password">Enter Your Password</label>

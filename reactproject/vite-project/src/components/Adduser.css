@@ -10,7 +10,8 @@
      display: flex;
      justify-content: center;
      flex-direction: column;
-     min-height: 100vh;
+     height: 92vh;
+     margin-top: 40px;
  }
  .wrap-item{
      display: flex;
