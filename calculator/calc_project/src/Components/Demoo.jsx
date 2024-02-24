@@ -224,29 +224,29 @@ const Calculator = () => {
         </div>
 
           <div className="row w-50 mx-auto">
-            <div className="col border border-danger">
+            <div className="col ">
               <button className="shadow-sm p-sm-3 mb-sm-5 rounded act_num" onClick={() => handleButtonClick('0')}>
                 0
               </button>
             </div>
-            <div className="col border border-danger">
+            <div className="col ">
               <button className="shadow-sm p-sm-3 mb-sm-5 rounded" onClick={() => handleButtonClick('.')}>
                 .
               </button>
             </div>
-            <div className="col border border-danger">
+            <div className="col r">
               <button className="shadow-sm p-sm-3 mb-sm-5 rounded" onClick={() => handleButtonClick('=')}>
                 =
               </button>
             </div>
-            <div className="col border border-danger">
+            <div className="col ">
               <button className="shadow-sm p-sm-3 mb-sm-5 rounded" onClick={() => handleButtonClick('+')}>
                 +
               </button>
             </div>
           </div>
         </div>
-        <button onClick={toggleTheme}>Toggle Theme</button>
+        <button className='w-25' onClick={toggleTheme}>Dark-mode</button>
       </div>
     </div>
     </ThemeProvider>
