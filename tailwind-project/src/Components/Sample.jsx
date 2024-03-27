@@ -7,6 +7,9 @@
  import macbookpro from '../images/macbookpronew.jpg';
  import iphone15pro from '../images/15pro.jpg';
  import apple2 from '../images/apple2.jpg';
+ import iwatch from '../images/promo_apple_watch_series_9_order__b3u85rm9zf6u_large_2x.jpg'
+ import ipad from '../images/promo_ipad__fioegapg12qi_large_2x.jpg'
+ import flowermoon from '../images/flowermoon.jpg'
 
  function Sample() {
     return (
@@ -35,20 +38,47 @@
    <div className="ribbon flex justify-center bg-ribbonbg py-2"><p className="p1 text-ribbonp1">Save up to ₹10000.00 instantly on eligible products with HDFC Bank Credit Cards. Plus No Cost EMI from most leading banks</p>
    <p className="p2 text-ribbonp2 ">*Shop now</p>
 </div>
-<div className="main">
+
  
-       <div className="macpro h-full relative bg-black ">
-    <div className="odd1 absolute top-0 left-0 right-0 flex flex-col justify-center items-center text-center z-10 ">
-        <div className="titan text-5xl text-white pt-5">iPhone 15 pro </div>
-        <div className="titan2 text-xl text-white py-2">New camera.New design.New phoria</div>
-       <div>
-        <button className=" border-0 text-2xl text-blue">Learn more{'>'}</button>
-        <button className=" border-0 text-2xl text-blue">&nbsp;&nbsp;Buy{'>'} </button></div>
+{/* <div className="parent-container min-h-screen flex justify-center items-center bg-black">
+    <div className="macpro relative bg-black flex flex-col h-full">
+        <div className="odd1 flex flex-col justify-center items-center text-center z-10">
+            <div className="titan text-5xl text-white pt-5">iPhone 15 pro</div>
+            <div className="titan2 text-xl text-white py-2">New camera. New design. New phoria</div>
+            <div>
+                <button className="border-0 text-2xl text-blue">Learn more{'>'}</button>
+                <button className="border-0 text-2xl text-blue">&nbsp;&nbsp;Buy{'>'}</button>
+            </div>
+        </div>
+        <div className="pics3 relative flex-grow">
+        <img src={apple15pro} alt="" height={580} className="w-full object-cover lg:h-auto lg:w-full" />
+
+        </div>
     </div>
-    <div className="pics3 relative z-0 pt-32 ">
-        <img src={apple15pro} alt="" className="w-full h-full object-cover" />
+</div> */}
+
+<div className="parent-container min-h-screen  flex flex-col justify-start items-center bg-black" style={{backgroundImage: `url(${apple15pro})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
+    <div className="macpro relative bg-black flex flex-col justify-center items-center text-center z-10  mt-5">
+        <div className="odd1">
+            <div className="titan text-6xl text-white pt-5 font-semibold ">iPhone 15 pro</div>
+            <div className="titan2 text-xl text-white py-2">New camera. New design. New phoria</div>
+            <div>
+                <button className="border-0 text-2xl text-blue">Learn more{'>'}</button>
+                <button className="border-0 text-2xl text-blue">&nbsp;&nbsp;Buy{'>'}</button>
+            </div>
+        </div>
     </div>
 </div>
+
+
+
+
+
+
+
+
+
+
 <div className="macpro h-full relative bg-white  ">
     <div className="odd1 absolute top-0 left-0 right-0 flex flex-col justify-center items-center text-center z-10 ">
         <div className="titan text-5xl text-black pt-5">iPhone 15 pro </div>
@@ -76,36 +106,68 @@
 </div>
 
 
-<div className="flex relative pt-2">
-    <div className="w-1/2 pic bg-black">
-        <div className="pics1 relative">
-            <div className="absolute top-0 left-0 right-0 bottom-0 flex flex-col justify-center items-center text-center z-10">
-                <div className="titan text-3xl text-white">iPhone 15 pro</div>
-                <div className="titan2 text-xl text-white">Titanium. So strong. So light. So pro</div>
-                <div>
-                <button className="bg-black border-0 text-2xl text-blue">Learn more </button>
-                <button className="bg-black border-0 text-2xl text-blue">&nbsp;&nbsp;Buy </button></div>
+
+
+
+
+
+
+
+<div className="flex relative pt-2 h-screen">
+    <div className="w-1/2 pic bg-black relative flex flex-col justify-start items-center" style={{backgroundImage: `url(${iphone15pro})`, backgroundSize: 'cover', backgroundPosition: 'center', marginRight: '8px'}}>
+        <div className="pics1 text-center z-10 mt-8">
+            <div className="titan text-4xl text-white">iPhone 15 pro</div>
+            <div className="titan2 text-2xl text-white">Titanium. So strong. So light. So pro</div>
+            <div>
+                <button className="bg-black border-0 text-3xl text-blue">Learn more </button>
+                <button className="bg-black border-0 text-3xl text-blue">&nbsp;&nbsp;Buy </button>
             </div>
-            <img src={iphone15pro} alt="" className="w-full h-96 pt-56" />
         </div>
     </div>
-    <div className="w-1/2 pic bg-white h-full">
-        <div className="pics2 relative ">
-            <div className="absolute top-0 left-0 right-0 bottom-0 flex flex-col justify-center items-center text-center z-10">
-                <div className="titan text-3xl">iPhone 15</div>
-                <div className="titan2 text-xl">New camera. New design. New phoria</div>
-                <div>
-                <button className="border-0 text-2xl text-blue">Learn more </button>
-                <button className="border-0 text-2xl text-blue">&nbsp;&nbsp;Buy </button></div>
+    <div className="w-1/2 pic bg-white relative flex flex-col justify-start items-center" style={{backgroundImage: `url(${apple2})`, backgroundSize: 'cover', backgroundPosition: 'center', marginLeft: '8px'}}>
+        <div className="pics2 text-center z-10 mt-8">
+            <div className="titan text-4xl">iPhone 15</div>
+            <div className="titan2 text-2xl">New camera. New design. New phoria</div>
+            <div>
+                <button className="border-0 text-3xl text-blue">Learn more </button>
+                <button className="border-0 text-3xl text-blue">&nbsp;&nbsp;Buy </button>
             </div>
-            <img src={apple2} alt="" className="w-full h-full pt-56" />
+        </div>
+    </div>
+</div>
+
+<div className="flex relative pt-2 h-screen">
+    <div className="w-1/2 pic bg-black relative flex flex-col justify-start items-center" style={{backgroundImage: `url(${iwatch})`, backgroundSize: 'cover', backgroundPosition: 'center', marginRight: '8px'}}>
+        <div className="pics1 text-center z-10 mt-8">
+            <div className="titan text-4xl text-white">WATCH</div>
+            <div className="bg-black border-0 text-l text-red ">S E R I E S 9</div>
+            <div className="titan2 text-2xl text-white">Smarter.Brighter.Mightier</div>
+            <div>
+                <button className="bg-black border-0 text-l text-blue">Learn more </button>
+                <button className="bg-black border-0 text-l text-blue">&nbsp;&nbsp;Buy </button>
+            </div>
+        </div>
+    </div>
+    <div className="w-1/2 pic bg-white relative flex flex-col justify-start items-center" style={{backgroundImage: `url(${ipad})`, backgroundSize: 'cover', backgroundPosition: 'center', marginLeft: '8px'}}>
+        <div className="pics2 text-center z-10 mt-8">
+            <div className="titan text-4xl">iPad</div>
+            <div className="titan2 text-2xl">Lovable.Drawable.Magical</div>
+            <div>
+                <button className="border-0 text-l text-blue">Learn more </button>
+                <button className="border-0 text-l text-blue">&nbsp;&nbsp;Buy </button>
+            </div>
         </div>
     </div>
 </div>
 
 
 
-</div>
+
+
+<img src={flowermoon} alt="" className="w-full p-8" />
+
+
+
 <div className="container4 flex justify-center mx-8 py-8">
         <div className="subcontainer4 ">
             <p className="text-xs flex justify-center">*Instant savings, otherwise referred to as instant cashback, is available on the Apple Store Online and Apple Retail Stores with the purchase of an eligible product with qualifying HDFC Bank Credit Cards and EasyEMI Credit Cards only from 15 October 2023 to 14 November 2023, with the exception of iPhone 14 and iPhone 14 Plus, and AirPods Pro (2nd generation), which will have instant savings applicable between 15 October 2023 and 7 November 2023 only. Minimum transaction value of ₹10001.00 applies. Click here to see instant savings amounts and eligible devices. Instant savings are available for up to two orders per rolling 90-day period with an eligible card. Card eligibility is subject to terms and conditions between you and your card-issuing bank. Total transaction value is calculated after any trade-in credit or eligible discount is applied. Any subsequent order adjustment(s) or cancellation(s) may result in instant savings being recalculated, and any refund may be adjusted to account for instant savings clawback; this may result in no refund being made to you. Offer may be revised or withdrawn at any time without any prior notice. Additional terms apply. Offer cannot be combined with Apple Store for Education or Corporate Employee Purchase Plan pricing. Multiple separate orders cannot be combined for instant savings.
